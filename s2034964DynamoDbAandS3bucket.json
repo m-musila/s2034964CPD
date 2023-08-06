@@ -1,0 +1,85 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "a467d264-f2ee-441e-a93d-e522ddd23879": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": 160
+                },
+                "z": 0
+            },
+            "37976471-ace5-40ca-ab28-4ce6bba76953": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 580,
+                    "y": 280
+                },
+                "z": 0
+            }
+        }
+    },
+    "Resources": {
+        "S3B1FLFL": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": "s2034964s3bucket",
+                "NotificationConfiguration": {
+                    "TopicConfigurations": [
+                        {
+                            "Topic": "arn:aws:sns:us-east-1:212457701268:s2034964Topic",
+                            "Event": "s3:ObjectCreated:*"
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a467d264-f2ee-441e-a93d-e522ddd23879"
+                }
+            }
+        },
+        "DDBT55OLK": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "AttributeDefinitions" : [
+                    {
+                      "AttributeName" : "ImageName",
+                      "AttributeType" : "S"   
+                    },
+                    {
+                      "AttributeName" : "ConfidenceScore",
+                      "AttributeType" : "N"
+                    }
+                  ],
+                  "KeySchema" : [
+                    {
+                      "AttributeName" : "ImageName",
+                      "KeyType" : "HASH"
+                    },
+                    {
+                      "AttributeName" : "ConfidenceScore",
+                      "KeyType" : "RANGE"
+                    }
+                  ],
+                  "ProvisionedThroughput" : {
+                    "ReadCapacityUnits" : "5",
+                    "WriteCapacityUnits" : "5"
+                  },
+                  "TableName": "ImageTableS2034964"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "37976471-ace5-40ca-ab28-4ce6bba76953"
+                }
+            }
+        }
+    }
+}

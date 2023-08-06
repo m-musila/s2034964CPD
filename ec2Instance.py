@@ -26,7 +26,7 @@ def ec2Instance():
         # create ec2 instance from above resource 
         instance = ec2.create_instances(
             # amazon machine image for this region and number of ec2 instances noted by min/max count
-            ImageId="ami-006dcf34c09e50022",
+            ImageId="ami-0f34c5ae932e6f0e4",
             MinCount=1,
             MaxCount=1,
             InstanceType="t2.micro",

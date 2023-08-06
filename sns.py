@@ -11,9 +11,9 @@ keyId = os.getenv("aws_access_key_id")
 key = os.getenv("aws_secret_access_key")
 token = os.getenv("aws_session_token")
 
-# create sqs queue resouce from boto3 with the enviroment variables
-def sqsQueue():
-    sqsQueue = boto3.resource("sqs",
+# create sns topic resouce from boto3 with the enviroment variables
+def snsTopic():
+    snsTopic = boto3.client("sns",
                               region_name = region,
                               aws_access_key_id = keyId,
                               aws_secret_access_key = key,
@@ -21,9 +21,10 @@ def sqsQueue():
                               )
    # checks for return values and error conditions
     try:
-        # create sqs queue instance from above resource 
-        queue = sqsQueue.create_queue(queueName="s2034964Queue")
-        print(queue.url)
+        # create sqs topic url from above resource 
+        topic = snsTopic.create_topic(Name="s2034964Topic")
+        print("topic created")
     except ClientError as e:  
-        print("sqs queue instance error. Check implementation and try again!")
+        print("sns topic instance error. Check implementation and try again!")
 
+snsTopic()

@@ -25,7 +25,7 @@ def s3BucketAndFileUpload(image, objectName):
     # Access image location
     imageLocation = os.getcwd()
     # My image bucket
-    bucketName = "s2034964ImgS3Bucket"
+    bucketName = "s2034964s3bucket"
     # Access image name using images folder dir
     imageName = os.path.join(imageLocation, "images", image)
 
