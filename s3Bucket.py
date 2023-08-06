@@ -7,10 +7,10 @@ from dotenv import load_dotenv
 
 # load enviroment values for the sqs queue.
 load_dotenv() 
-region = os.getenv("REGION_NAME")
-keyId = os.getenv("AWS_ACCESS_KEY_ID")
-key = os.getenv("AWS_SECRET_ACCESS_KEY")
-token = os.getenv("AWS_SESSION_TOKEN")
+region = os.getenv("region_name")
+keyId = os.getenv("aws_access_key_id")
+key = os.getenv("aws_secret_access_key")
+token = os.getenv("aws_session_token")
 
 
 # The bucket is created in the S3 default us-east-1 region. the image uplaod done
