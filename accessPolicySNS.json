@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Id": "arn:aws:sns:us-east-1:212457701268:s2034964Topic/SNSDefaultPolicy",
+    "Statement": [
+        {
+            "Sid": "SNSbuketTopicPolicy",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "s3.amazonaws.com"
+            },
+            "Action": [
+                "SNS:Publish"
+            ],
+            "Resource": "arn:aws:sns:us-east-1:212457701268:s2034964Topic",
+            "Condition": {
+                "ArnLike": {
+                    "aws:SourceArn": "arn:aws:s3:*:*:s2034964s3bucket"
+                },
+                "StringEquals": {
+                    "aws:SourceAccount": "212457701268"
+                }
+            }
+        }
+    ]
+}                  

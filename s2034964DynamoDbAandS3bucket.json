@@ -11,7 +11,8 @@
                     "x": 690,
                     "y": 160
                 },
-                "z": 0
+                "z": 0,
+                "embeds": []
             },
             "37976471-ace5-40ca-ab28-4ce6bba76953": {
                 "size": {
@@ -22,7 +23,8 @@
                     "x": 580,
                     "y": 280
                 },
-                "z": 0
+                "z": 0,
+                "embeds": []
             }
         }
     },
@@ -34,8 +36,8 @@
                 "NotificationConfiguration": {
                     "TopicConfigurations": [
                         {
-                            "Topic": "arn:aws:sns:us-east-1:212457701268:s2034964Topic",
-                            "Event": "s3:ObjectCreated:*"
+                            "Event": "s3:ObjectCreated:*",
+                            "Topic": "arn:aws:sns:us-east-1:212457701268:s2034964Topic"
                         }
                     ]
                 }
@@ -70,8 +72,8 @@
                     }
                   ],
                   "ProvisionedThroughput" : {
-                    "ReadCapacityUnits" : "5",
-                    "WriteCapacityUnits" : "5"
+                    "ReadCapacityUnits" : "10",
+                    "WriteCapacityUnits" : "10"
                   },
                   "TableName": "ImageTableS2034964"
             },
